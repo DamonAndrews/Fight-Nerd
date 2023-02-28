@@ -1,0 +1,63 @@
+
+body{
+    background-color: darkgray;
+}
+/* FIGHT NERD LOGO @ TOP OF PAGE */
+h1 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: darkgray;
+    margin:0;
+    
+}
+
+h2{
+    text-align: center;
+    
+}
+
+
+/* NAVIGATION/OPTION BAR UNDER LOGO */
+.buttons, .buttons a {
+    padding: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+    text-decoration: none;
+    font-weight: bold; 
+    color: white;
+}
+/* NAVBAR WHEN SCREEN IS SCROLLED DOWN */
+.sticky {
+     position:fixed;
+     top: 0;
+     width: 100%;
+}
+
+#flexBox{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 16px;
+    text-align: center;
+    border: black, 10px, solid;
+  }
