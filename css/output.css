@@ -1,0 +1,22 @@
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+
+:disabled {
+  cursor: default;
+}
+
+
+
+.hide {
+  display: none;
+}
+
+.show{
+  display:flex;
+}

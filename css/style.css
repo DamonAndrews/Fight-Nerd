@@ -1,33 +1,29 @@
 
-body{
-    background-color: darkgray;
-}
+
 /* FIGHT NERD LOGO @ TOP OF PAGE */
 h1 {
     display: flex;
     justify-content: center;
     width: 100%;
-    background-color: darkgray;
-    margin:0;
-    
+    background-color: gray;
+    margin:0; 
 }
 
 h2{
-    text-align: center;
-    
+    text-align: center;   
 }
 
-
 /* NAVIGATION/OPTION BAR UNDER LOGO */
-.buttons, .buttons a {
+.buttons {
     padding: 5px;
     display: flex;
     justify-content: space-evenly;
     background-color: black;
     text-decoration: none;
     font-weight: bold; 
-    color: white;
+    color: red;
 }
+
 /* NAVBAR WHEN SCREEN IS SCROLLED DOWN */
 .sticky {
      position:fixed;
@@ -59,5 +55,13 @@ h2{
   .container {
     padding: 2px 16px;
     text-align: center;
-    border: black, 10px, solid;
   }
+
+h4{
+    color:blue;
+}
+#fighterSearchPageBlank{
+    text-align: center;
+    font-weight: bolder;
+}
+
