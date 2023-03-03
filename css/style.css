@@ -24,6 +24,10 @@ h2{
     color: red;
 }
 
+.buttons :active{
+    cursor: grabbing
+}
+
 /* NAVBAR WHEN SCREEN IS SCROLLED DOWN */
 .sticky {
      position:fixed;

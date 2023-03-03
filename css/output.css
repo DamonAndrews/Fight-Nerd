@@ -1,7 +1,13 @@
-button,
+a, button :hover
 [role="button"] {
-  cursor: pointer;
+  cursor: grab;
 }
+
+a, button :active
+[role="button"] {
+  /* cursor: grabbing; */
+}
+
 
 /*
 Make sure disabled buttons don't get the pointer cursor.

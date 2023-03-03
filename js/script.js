@@ -4,18 +4,26 @@ var buttons = document.querySelector(".buttons");
 var sticky = buttons.offsetTop;
 
 // SEARCH BUTTONS ON CARDS IN CENTER OF PAGE
-var searchByStatButton = document.getElementById("searchByStatButton");
-var searchByFighterButton = document.getElementById("searchByFighterButton");
-var taleOfTheTapeButton = document.getElementById("taleOfTheTapeButton");
+var searchByStat = document.getElementById("searchByStat");
+var searchByFighter = document.getElementById("searchByFighter");
+var totT = document.getElementById("taleOfTheTape");
 
 var statSearchPageBlank = document.getElementById("statSearchPageBlank");
-var searchButtonInBanner = document.getElementById("searchButtonInBanner");
 
 var fightSearchPageBlank = document.getElementById("fightSearchPageBlank");
-var fighterButtonInBanner = document.getElementById("fighterButtonInBanner");
 
 var tapeSearchPageBlank = document.getElementById("tapeSearchPageBlank");
-var tapeButtonInBanner = document.getElementById("tapeButtonInBanner");
+
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    buttons.classList.add("sticky")
+  } else {
+    buttons.classList.remove("sticky");
+  }
+}
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
 
 function launchStatSearchPage(){
   homePage.classList.add("hide");
@@ -40,22 +48,41 @@ function taleOfTheTape(){
   body.classList.remove("body");
 }
 
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    buttons.classList.add("sticky")
-  } else {
-    buttons.classList.remove("sticky");
-  }
+searchByStat.addEventListener("click", launchStatSearchPage);
+
+searchByFighter.addEventListener("click", launchFighterSearchPage);
+
+totT.addEventListener("click", taleOfTheTape);
+
+
+
+
+var aboutPage = document.getElementById("aboutPage");
+
+aboutButton.addEventListener("click", aboutFunction);
+
+function aboutFunction(){
+  homePage.classList.add("hide");
+  aboutPage.classList.remove("hide");
+  body.classList.remove("body");
 }
-// When the user scrolls the page, execute myFunction
-window.onscroll = function() {myFunction()};
 
-searchByStatButton.addEventListener("click", launchStatSearchPage);
-searchButtonInBanner.addEventListener("click", launchStatSearchPageByBannerButton);
+var contactPage = document.getElementById("contactPage");
 
-searchByFighterButton.addEventListener("click", launchFighterSearchPage);
-fighterButtonInBanner.addEventListener("click", launchFighterSearchPage);
+contactButton.addEventListener("click", contactFunction);
 
-taleOfTheTapeButton.addEventListener("click", taleOfTheTape);
+function contactFunction(){
+  homePage.classList.add("hide");
+  contactPage.classList.remove("hide");
+  body.classList.remove("body");
+}
 
-tapeButtonInBanner.addEventListener("click", taleOfTheTape);
+var loginPage = document.getElementById("loginPage");
+
+loginButton.addEventListener("click", loginFunction);
+
+function loginFunction(){
+  homePage.classList.add("hide");
+  loginPage.classList.remove("hide");
+  body.classList.remove("body");
+}
