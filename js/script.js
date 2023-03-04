@@ -1,8 +1,7 @@
 var homePage = document.querySelector("#homePage");
 var body = document.querySelector(".body");
 var buttons = document.querySelector(".buttons");
-var sticky = buttons.offsetTop;
-
+var sticky = buttons.offsetTop
 // SEARCH BUTTONS ON CARDS IN CENTER OF PAGE
 var searchByStat = document.getElementById("searchByStat");
 var searchByFighter = document.getElementById("searchByFighter");
@@ -25,27 +24,22 @@ function myFunction() {
 // When the user scrolls the page, execute myFunction
 window.onscroll = function() {myFunction()};
 
+function hidePages(){
+  homePage.classList.add("hide");
+  body.classList.remove("body");
+}
+
 function launchStatSearchPage(){
-  homePage.classList.add("hide");
+  hidePages();
   statSearchPageBlank.classList.remove("hide");
-  body.classList.remove("body");
 }
-function launchStatSearchPageByBannerButton(){
-  homePage.classList.add("hide");
-  statSearchPageBlank.classList.remove("hide");
-  body.classList.remove("body");
-}
-
 function launchFighterSearchPage() {
-  homePage.classList.add("hide");
+  hidePages();
     fightSearchPageBlank.classList.remove("hide");
-    body.classList.remove("body");
 }
-
 function taleOfTheTape(){
-  homePage.classList.add("hide");
+  hidePages();
   tapeSearchPageBlank.classList.remove("hide");
-  body.classList.remove("body");
 }
 
 searchByStat.addEventListener("click", launchStatSearchPage);
@@ -55,16 +49,13 @@ searchByFighter.addEventListener("click", launchFighterSearchPage);
 totT.addEventListener("click", taleOfTheTape);
 
 
-
-
 var aboutPage = document.getElementById("aboutPage");
 
 aboutButton.addEventListener("click", aboutFunction);
 
 function aboutFunction(){
-  homePage.classList.add("hide");
+  hidePages();
   aboutPage.classList.remove("hide");
-  body.classList.remove("body");
 }
 
 var contactPage = document.getElementById("contactPage");
@@ -72,9 +63,8 @@ var contactPage = document.getElementById("contactPage");
 contactButton.addEventListener("click", contactFunction);
 
 function contactFunction(){
-  homePage.classList.add("hide");
+  hidePages();
   contactPage.classList.remove("hide");
-  body.classList.remove("body");
 }
 
 var loginPage = document.getElementById("loginPage");
@@ -82,7 +72,52 @@ var loginPage = document.getElementById("loginPage");
 loginButton.addEventListener("click", loginFunction);
 
 function loginFunction(){
-  homePage.classList.add("hide");
+  hidePages();
   loginPage.classList.remove("hide");
-  body.classList.remove("body");
 }
+
+const form = document.getElementById("form");
+const result = document.getElementById("result");
+
+form.addEventListener("submit", function (e) {
+  const formData = new FormData(form);
+  e.preventDefault();
+  var object = {};
+  formData.forEach((value, key) => {
+    object[key] = value;
+  });
+  var json = JSON.stringify(object);
+  result.innerHTML = "Please wait...";
+
+  fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json"
+    },
+    body: json
+  })
+    .then(async (response) => {
+      let json = await response.json();
+      if (response.status == 200) {
+        result.innerHTML = json.message;
+        result.classList.remove("text-gray-500");
+        result.classList.add("text-green-500");
+      } else {
+        console.log(response);
+        result.innerHTML = json.message;
+        result.classList.remove("text-gray-500");
+        result.classList.add("text-red-500");
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+      result.innerHTML = "Something went wrong!";
+    })
+    .then(function () {
+      form.reset();
+      setTimeout(() => {
+        result.style.display = "none";
+      }, 5000);
+    });
+});
