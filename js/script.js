@@ -29,6 +29,28 @@ function hidePages(){
   body.classList.remove("body");
 }
 
+function hideContactAndLoginTabs(){
+  contactPage.classList.add("hide");
+  loginPage.classList.add("hide");
+  statSearchPageBlank.classList.add("hide");
+  fightSearchPageBlank.classList.add("hide");
+  tapeSearchPageBlank.classList.add("hide");
+}
+function hideAboutAndLoginTabs(){
+  aboutPage.classList.add("hide");
+  loginPage.classList.add("hide");
+  statSearchPageBlank.classList.add("hide");
+  fightSearchPageBlank.classList.add("hide");
+  tapeSearchPageBlank.classList.add("hide");
+}
+function hideAboutAndContactTabs(){
+  aboutPage.classList.add("hide");
+  contactPage.classList.add("hide");
+  statSearchPageBlank.classList.add("hide");
+  fightSearchPageBlank.classList.add("hide");
+  tapeSearchPageBlank.classList.add("hide");
+}
+
 function launchStatSearchPage(){
   hidePages();
   statSearchPageBlank.classList.remove("hide");
@@ -55,6 +77,7 @@ aboutButton.addEventListener("click", aboutFunction);
 
 function aboutFunction(){
   hidePages();
+  hideContactAndLoginTabs();
   aboutPage.classList.remove("hide");
 }
 
@@ -64,6 +87,7 @@ contactButton.addEventListener("click", contactFunction);
 
 function contactFunction(){
   hidePages();
+  hideAboutAndLoginTabs();
   contactPage.classList.remove("hide");
 }
 
@@ -73,8 +97,12 @@ loginButton.addEventListener("click", loginFunction);
 
 function loginFunction(){
   hidePages();
+  hideAboutAndContactTabs();
   loginPage.classList.remove("hide");
 }
+
+
+
 
 const form = document.getElementById("form");
 const result = document.getElementById("result");
@@ -121,3 +149,28 @@ form.addEventListener("submit", function (e) {
       }, 5000);
     });
 });
+
+var fighterSearchButton = document.getElementById("fighterSearchButton");
+
+var fightersSearchURL = "https://api.sportsdata.io/v3/mma/scores/json/Fighters?key=0244b7bf67b24f55bfd4ae6352ebda4e";
+
+fighterSearchButton.addEventListener("click", getFighters);
+
+const options2 ={
+  method: 'GET',
+}
+
+
+function getFighters() {
+
+  var fighterList = 'https://api.sportsdata.io/v3/mma/scores/json/Fighters?key=0244b7bf67b24f55bfd4ae6352ebda4e' ;
+
+  fetch(fighterList, options2)
+  .then(response => response.json())
+  .then(response => {
+  console.log("fighters", response)
+
+  var array = response
+  allFighters(array);
+
+})}
