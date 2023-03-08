@@ -150,27 +150,37 @@ form.addEventListener("submit", function (e) {
     });
 });
 
-var fighterSearchButton = document.getElementById("fighterSearchButton");
+var tableBody = document.getElementById('repo-table');
+var fetchButton = document.getElementById('fetch-button');
 
-var fightersSearchURL = "https://api.sportsdata.io/v3/mma/scores/json/Fighters?key=0244b7bf67b24f55bfd4ae6352ebda4e";
+function getApi() {
+  // fetch request gets a list of all the repos for the node.js organization
+  var requestUrl = 'https://api.sportsdata.io/v3/mma/scores/json/Fighters?key=0244b7bf67b24f55bfd4ae6352ebda4e';
 
-fighterSearchButton.addEventListener("click", getFighters);
+  fetch(requestUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data)
+      //Loop over the data to generate a table, each table row will have a link to the repo url
+      for (var i = 0; i < data.length; i++) {
+        // Creating elements, tablerow, tabledata, and anchor
+        var createTableRow = document.createElement('tr');
+        var tableData = document.createElement('td');
+        var link = document.createElement('a');
 
-const options2 ={
-  method: 'GET',
+        // Setting the text of link and the href of the link
+        link.textContent = data[i].FirstName + " " + data[i].LastName;
+        link.href = data[i].ShortName;
+
+        // Appending the link to the tabledata and then appending the tabledata to the tablerow
+        // The tablerow then gets appended to the tablebody
+        tableData.appendChild(link);
+        createTableRow.appendChild(tableData);
+        tableBody.appendChild(createTableRow);
+      }
+    });
 }
 
-
-function getFighters() {
-
-  var fighterList = 'https://api.sportsdata.io/v3/mma/scores/json/Fighters?key=0244b7bf67b24f55bfd4ae6352ebda4e' ;
-
-  fetch(fighterList, options2)
-  .then(response => response.json())
-  .then(response => {
-  console.log("fighters", response)
-
-  var array = response
-  allFighters(array);
-
-})}
+fetchButton.addEventListener('click', getApi);

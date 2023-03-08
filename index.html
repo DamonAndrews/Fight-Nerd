@@ -85,49 +85,67 @@
                     <div class="mt-10 mb-5 text-5xl">
                       <h2>Select A Fighter</h2>
                     </div>
-                
-<div class="">
+
+
+                    <div class="text-center pt-4">
+                      <button class="btn btn-danger" id="fetch-button">
+                        //search_all
+                      </button>
+                      <div class="">
             
-    <form class="flex text-black">
-        <div class="p-5">
-                       <label id="teamSelector"></label>
-
-                        <select id="allTeams">
-                          <option>---Select Gender---</option>
-                          <option value="Men's">Male</option>
-                          <option value="Women's">Female</option>
-                        </select>
+                        <form class="flex text-black">
+                            <div class="p-5">
+                                           <label id="teamSelector"></label>
+                    
+                                            <select id="allTeams">
+                                              <option>---Select Gender---</option>
+                                              <option value="Men's">Male</option>
+                                              <option value="Women's">Female</option>
+                                            </select>
+                                        </div>
+                    
+                                <div class="p-5">
+                                           <label id="teamSelector"></label>
+                                            <select id="allTeams">
+                                              <option>---Select Division---</option>
+                                              <option value="Atlanta Hawks">Flyweight</option>
+                                              <option value="Boston Celtics">Bantamweight</option>
+                                              <option value="Boston Celtics">Featherweight</option>
+                                              <option value="Boston Celtics">Lightweight</option>
+                                              <option value="Boston Celtics">Welterweight</option>
+                                              <option value="Boston Celtics">Middleweight</option>
+                                              <option value="Boston Celtics">Light Heavyweight</option>
+                                              <option value="Boston Celtics">Heavyweight</option>
+                                            </select>
                     </div>
-
-            <div class="p-5">
-                       <label id="teamSelector"></label>
-                        <select id="allTeams">
-                          <option>---Select Division---</option>
-                          <option value="Atlanta Hawks">Flyweight</option>
-                          <option value="Boston Celtics">Bantamweight</option>
-                          <option value="Boston Celtics">Featherweight</option>
-                          <option value="Boston Celtics">Lightweight</option>
-                          <option value="Boston Celtics">Welterweight</option>
-                          <option value="Boston Celtics">Middleweight</option>
-                          <option value="Boston Celtics">Light Heavyweight</option>
-                          <option value="Boston Celtics">Heavyweight</option>
-                        </select>
-</div>
-<div class="p-5">
-                       <label id="teamSelector"></label>
-                        <select id="allTeams">
-                          <option>---Select Fighter---</option>
-                          <option value="Atlanta Hawks">Alexandre</option>
-                          <option value="Boston Celtics">Amir</option>
-                          <option value="Boston Celtics">Askar</option>
-                          <option value="Boston Celtics">Brandon</option>
-                          <option value="Boston Celtics">Bruno</option>
-                        </select>
-                        </div>
-    </form>
+                    <div class="p-5">
+                                           <label id="teamSelector"></label>
+                                            <select id="allTeams">
+                                              <option>---Select Fighter---</option>
+                                              <option value="">Bruno</option>
+                                              <option value="">Amir</option>
+                                              <option value="">Alexandre</option>
+                                              <option value="">Askar</option>
+                                              <option value="">Brandon</option>
+                                            </select>
+                                            </div>
+                        </form>
                         <div class="flex justify-center mt-8">
-                          <button id="fighterSearchButton" class="text-white text-3xl bg-black-500 rounded-full h-40 w-40 hover:bg-green-300">Fight</button>
+                          <button id="fighterSearchButton" class="btn bg-green-300 hover:bg-white-300">//search_filtered</button>
                         </div>
+
+                    
+
+                    </div>
+                    <table class="card-body table mx-auto my-4">
+                      <th>
+                        <p class="my-4">Results:</p>
+                      </th>
+                      <tbody id="repo-table" class="mx-auto text-center"></tbody>
+                    </table>
+                
+
+                     
                     </div>    
                   </div>
                 </div>
