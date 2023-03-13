@@ -89,7 +89,7 @@
 
                     <div class="text-center pt-4">
                       <button class="btn btn-danger" id="fetch-button">
-                        //search_all
+                        Search All
                       </button>
                       <div class="">
             
@@ -131,7 +131,7 @@
                                             </div>
                         </form>
                         <div class="flex justify-center mt-8">
-                          <button id="fighterSearchButton" class="btn bg-green-300 hover:bg-white-300">//search_filtered</button>
+                          <button id="fighterSearchButton" class="btn bg-green-300 hover:bg-white-300">Search Filtered</button>
                         </div>
 
                     
@@ -167,7 +167,7 @@
             <section class="flex justify-center">
                 <div id="aboutPage" class="hide">
                   <h3>ABOUT FIGHT NERD</h3>
-                      <ol style="text-decoration: underline;">This project started in 2020 and will always be an ongoing endeavor. The purpose of Fight Nerd is to allow fans access to statistical MMA data otherwise unavailable or difficult to obtain in a user friendly format.</ol>
+                      <ol style="text-decoration: underline;">Fight Nerd provides access to statistical MMA data otherwise unavailable or difficult to obtain, in a user friendly format.</ol>
                       <li>Partnerships</li>
                       <li>Corporate Use</li>
                 </div>
@@ -178,7 +178,7 @@
                 
             <section class="flex justify-center">
                 <div id="contactPage" class="hide">
-                    <div class="flex items-center min-h-screen bg-silver-50 dark:bg-gray-900">
+                    <div class="flex min-h-screen bg-silver-50 dark:bg-gray-900">
                         <div class="container mx-auto">
                           <div class="max-w-md mx-auto my-10 bg-black p-5 rounded-md shadow-sm">
                             <div class="text-center">
@@ -227,47 +227,46 @@
 
             <section class="flex justify-center">
                 <div id="loginPage" class="hide">
-                    <div class="flex items-center min-h-screen bg-silver-50 dark:bg-gray-900">
-                        <div class="container mx-auto">
-                          <div class="max-w-md mx-auto my-10 bg-black p-5 rounded-md shadow-sm">
-                            <div class="text-center">
-                              <h1 class="my-3 text-3xl font-semibold text-red-700 dark:text-gray-200">
+                  <div class="flex min-h-screen bg-silver-50 dark:bg-gray-900">
+                    <div class="container mx-auto">
+                      <div class="max-w-md mx-auto my-10 bg-black p-5 rounded-md shadow-sm">
+                        <div class="text-center">
+                          <h1 class="my-3 text-3xl font-semibold text-red-700 dark:text-gray-200">
+                            Login to Fight Nerd
+                          </h1>
+                        </div>
+                        <div class="m-7">
+                          <form action="https://api.web3forms.com/submit" method="POST" id="form">
+                            <input type="hidden" name="access_key" value="736fb324-8e5f-4351-972d-a0b8e368f31b"/>
+                            <input type="hidden" name="subject" value="New Submission from Web3Forms" />
+                            <input type="checkbox" name="botcheck" id="" style="display: none;" />
+                  
+                            <div class="mb-6">
+                              <label for="name" class="block mb-2 text-sm font-semibold text-red-600 dark:text-gray-400">Username:</label>
+                              <input type="text" name="name" id="name" placeholder="DanaWhite'sHotTamales" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                            </div>
+                            <div class="mb-6">
+                              <label for="email" class="block mb-2 text-sm font-semibold text-red-600 dark:text-gray-400">Password:</label>
+                              <input type="email" name="password" id="password" placeholder="Figherareyouready123..." required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                            </div>
+                            <div class="mb-6">
+                              <label for="phone" class="text-sm text-red-600 font-semibold dark:text-gray-400">Email (new accounts only):</label>
+                              <input type="email" name="email" id="email" placeholder="you@email.com" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                            </div>
+                            <div class="mb-6">
+                             
+                            </div>
+                            <div class="mb-6">
+                              <button type="submit" class="w-full px-3 py-4 text-black bg-red-500 rounded-md focus:bg-indigo-600 focus:outline-none font-semibold">
                                 Login/Create Account
-                              </h1>
+                              </button>
                             </div>
-                            <div class="m-7">
-                              <form action="https://api.web3forms.com/submit" method="POST" id="form">
-                                <input type="hidden" name="access_key" value="736fb324-8e5f-4351-972d-a0b8e368f31b"/>
-                                <input type="hidden" name="subject" value="New Submission from Web3Forms" />
-                                <input type="checkbox" name="botcheck" id="" style="display: none;" />
-                      
-                                <div class="mb-6">
-                                  <label for="name" class="block mb-2 text-sm font-semibold text-red-600 dark:text-gray-400">Username:</label>
-                                  <input type="text" name="name" id="name" placeholder="fightnerd#1" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
-                                </div>
-                                <div class="mb-6">
-                                    <label for="phone" class="text-sm text-red-600 font-semibold dark:text-gray-400">Password:</label>
-                                    <input type="text" name="phone" id="phone" placeholder="BruceBufferIsMyHero@!" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
-                                  </div>
-                      
-                                <div class="mb-6">
-                                  <label for="email" class="block mb-2 text-sm font-semibold text-red-600 dark:text-gray-400">Email Address:</label>
-                                  <input type="email" name="email" id="email" placeholder="ENTER IF CREATING ACCOUNT" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
-                                </div>
-                              
-                                <div class="mb-6">
-                                  <button type="submit" class="w-full px-3 py-4 text-black bg-red-500 rounded-md focus:bg-indigo-600 focus:outline-none font-semibold">
-                                    Sign In/Create Account
-                                  </button>
-                                </div>
-                                <p class="text-base text-center text-gray-400" id="result"></p>
-                              </form>
-                            </div>
-                          </div>
+                            <p class="text-base text-center text-gray-400" id="result"></p>
+                          </form>
                         </div>
                       </div>
-                      <li>Create Account</li>
-                      <li>Data Policy</li>
+                    </div>
+                  </div>
                 </div>
                 </section>  
         <br>
