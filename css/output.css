@@ -8,15 +8,9 @@ a, button :active
   /* cursor: grabbing; */
 }
 
-
-/*
-Make sure disabled buttons don't get the pointer cursor.
-*/
-
 :disabled {
   cursor: default;
 }
-
 
 
 .hide {
@@ -26,3 +20,4 @@ Make sure disabled buttons don't get the pointer cursor.
 .show{
   display:flex;
 }
+

@@ -1,7 +1,7 @@
 var homePage = document.querySelector("#homePage");
 var body = document.querySelector(".body");
 var buttons = document.querySelector(".buttons");
-var sticky = buttons.offsetTop
+var sticky = buttons.offsetTop;
 // SEARCH BUTTONS ON CARDS IN CENTER OF PAGE
 var searchByStat = document.getElementById("searchByStat");
 var searchByFighter = document.getElementById("searchByFighter");
@@ -13,6 +13,8 @@ var fightSearchPageBlank = document.getElementById("fightSearchPageBlank");
 
 var tapeSearchPageBlank = document.getElementById("tapeSearchPageBlank");
 
+var tableBody = document.getElementById('repo-table');
+var fetchButton = document.getElementById('fetch-button');
 
 function myFunction() {
   if (window.pageYOffset >= sticky) {
@@ -150,8 +152,7 @@ form.addEventListener("submit", function (e) {
     });
 });
 
-var tableBody = document.getElementById('repo-table');
-var fetchButton = document.getElementById('fetch-button');
+
 
 function getApi() {
   // fetch request gets a list of all the repos for the node.js organization
@@ -184,3 +185,5 @@ function getApi() {
 }
 
 fetchButton.addEventListener('click', getApi);
+
+
