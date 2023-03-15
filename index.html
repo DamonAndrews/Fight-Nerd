@@ -8,9 +8,7 @@
     <title>Fight Nerd</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./css/output.css"/>
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/footer.css" />
 </head>
 
     
@@ -33,7 +31,7 @@
     <div id="homePage">
       
         <br>
-        <h2 style="font-size: 50px;">Undisputed <span style="font-style: italic">Mixed Martial Arts</span></h2>
+        <h2 style="font-size: 50px;">UNDISPUTED <span style="font-style: italic">Mixed Martial Arts</span></h2>
         <br>
         
           
@@ -43,8 +41,8 @@
                         <div class="card">
                             <img src="./images/pexels-alesia-kozik-6770610.jpg" alt="data" style="width:100%">
                         <div class="container">
-                            <h4><button id="searchByStat" ><b>Search Stats</b></button></h4>
-                            Browse the Stats by League, Weight Division or Fighter
+                            <h4><button id="searchByStat" ><b style="font-size:x-large;">Search Stats</b></button></h4>
+                            <p>Browse the Stats by League, Weight Division or Fighter</p>
                         </div>
                         </div>
         <br>
@@ -52,8 +50,8 @@
                         <div class="card">
                             <img src="./images/training.jpg" alt="Avatar" style="width:100%">
                         <div class="container">
-                            <h4><button id="searchByFighter" ><b>Search Fighters</b></button></h4>
-                            Pick a Fighter to see their Various Stats
+                            <h4><button id="searchByFighter" ><b style="font-size:x-large;">Search Fighters</b></button></h4>
+                            <p>Pick a Fighter to see their Various Stats</p>
                         </div>
                         </div>
         <br>
@@ -61,8 +59,8 @@
                         <div class="card">
                             <img src="./images/data_pic.jpg" alt="Avatar" style="width:100%">
                             <div class="container">
-                            <h4><button id="taleOfTheTape" ><b>Tale of the Tape</b></button></h4>
-                            Compare Fighters side-by-side Across Stats of your Choice
+                            <h4><button id="taleOfTheTape" ><b style="font-size:x-large;">Tale of the Tape</b></button></h4>
+                            <p>Compare Fighters side-by-side Across Stats of your Choice</p>
                             </div>
                         </div>
         
@@ -178,21 +176,24 @@
 
 
                 
-            <section class="flex justify-center">
-                <div id="contactPage" class="hide">
-                    <div class="flex min-h-screen bg-silver-50 dark:bg-gray-900">
-                        <div class="container mx-auto">
-                          <div class="max-w-md mx-auto my-10 bg-black p-5 rounded-md shadow-sm">
-                            <div class="text-center">
-                              <h1 class="my-3 text-3xl font-semibold text-red-700 dark:text-gray-200">
-                                Contact Fight Nerd
-                              </h1>
-                            </div>
-                            <div class="m-7">
-                              <form action="https://api.web3forms.com/submit" method="POST" id="form">
-                                <input type="hidden" name="access_key" value="736fb324-8e5f-4351-972d-a0b8e368f31b"/>
-                                <input type="hidden" name="subject" value="New Submission from Web3Forms" />
-                                <input type="checkbox" name="botcheck" id="" style="display: none;" />
+<section class="flex justify-center">
+    <div id="contactPage" class="hide">
+      <div class="flex min-h-screen bg-silver-50 dark:bg-gray-900">
+        <div class="container mx-auto">
+          <div class="max-w-md mx-auto my-10 bg-black p-5 rounded-md shadow-sm">
+
+                  <div class="text-center">
+                                    <h1 class="my-3 text-3xl font-semibold text-red-700 dark:text-gray-200">
+                                      Contact Fight Nerd
+                                    </h1>
+                  </div>
+
+            <div class="m-7">
+
+              <form action="https://api.web3forms.com/submit" method="POST" id="form">
+                <input type="hidden" name="access_key" value="736fb324-8e5f-4351-972d-a0b8e368f31b"/>
+                  <input type="hidden" name="subject" value="New Submission from Web3Forms" />
+                    <input type="checkbox" name="botcheck" id="" style="display: none;" />
                       
                                 <div class="mb-6">
                                   <label for="name" class="block mb-2 text-sm font-semibold text-red-600 dark:text-gray-400">Full Name:</label>
@@ -218,16 +219,16 @@
                                 </div>
                                 <p class="text-base text-center text-gray-400" id="result"></p>
                               </form>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                </div>
-                </section>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>  
 
 
 
-            <section class="flex justify-center">
+<section class="flex justify-center">
                 <div id="loginPage" class="hide">
                   <div class="flex min-h-screen bg-silver-50 dark:bg-gray-900">
                     <div class="container mx-auto">
@@ -264,77 +265,43 @@
                               </button>
                             </div>
 
-                            <div class="calculator-container">
-                              <div class="display"></div>
-                              <div class="keys-container">
-                                <button type="button" class="nums">7</button>
-                                <button type="button" class="nums">8</button>
-                                <button type="button" class="nums">9</button>
-                                <button type="button" class="fctn DEL">DEL</button>
-                                <button type="button" class="fctn CLR">CLR</button>
-                                <button type="button" class="nums">4</button>
-                                <button type="button" class="nums">5</button>
-                                <button type="button" class="nums">6</button>
-                                <button type="button" class="oprt">&#215;</button>
-                                <button type="button" class="oprt">&#247;</button>
-                                <button type="button" class="nums">1</button>
-                                <button type="button" class="nums">2</button>
-                                <button type="button" class="nums">3</button>
-                                <button type="button" class="oprt">+</button>
-                                <button type="button" class="oprt">-</button> 
-                                <button type="button" class="nums">0</button>
-                                <button type="button" class="nums">.</button>
-                                <button type="button" class="perc">%</button>
-                                <button type="button" class="sqrt">&#8730;</button>
-                                <button type="button" class="equals">=</button>
-                              </div>
-                            </div>
-
-                            <p class="text-base text-center text-gray-400" id="result"></p>
-                          </form>
+                            
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                </section>  
+</section>  
         <br>
         <br>
         <br>
     
-    <footer>
-        <div class="footer-content">
-            <!-- <!–add all information –> -->
+
+
+
+<footer>
+      <div class="footer-content">
+        
             <h3>Fight Nerd</h3>
 
             <p>Fight Nerd. Providing access to the largest free MMA database available on the market.</p>
+      </div>
 
-             
-         </div>
-
-         <div class="footer-bottom">
+      <div class="footer-bottom">
             <a href="https://twitter.com/Fight_NerdMMA" class="fa fa-twitter" target="_blank"
             rel="noopener noreferrer"></a>
-<!-- <a href="#" class="fa fa-linkedin"></a> -->
-<a href="https://www.youtube.com/channel/UCHRcK3WqyhWS7jdpDtv7opg" class="fa fa-youtube" target="_blank"
-rel="noopener noreferrer"></a>
-<a href="https://www.instagram.com/fight_nerdmma/" class="fa fa-instagram" target="_blank"
-rel="noopener noreferrer"></a>
-            <p>copyright &copy;2021 <a href=”#”>Fight Nerd</a>  </p>
+            <a href="https://www.youtube.com/channel/UCHRcK3WqyhWS7jdpDtv7opg" class="fa fa-youtube" target="_blank"
+            rel="noopener noreferrer"></a>
+            <a href="https://www.instagram.com/fight_nerdmma/" class="fa fa-instagram" target="_blank"
+            rel="noopener noreferrer"></a>
+      </div>
 
-          
-         </div>
-
-        </footer> 
+</footer> 
 
 
-
-        
-        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-                    <script src="./js/script.js"></script>
-             
-        </body>
-  </html>
+<script src="./js/script.js"></script>       
+</body>
+</html>
              
       
       
