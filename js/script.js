@@ -172,7 +172,7 @@ function getApi() {
         var link = document.createElement('a');
 
         // Setting the text of link and the href of the link
-        link.textContent = data[i].FirstName + " " + data[i].LastName;
+        link.textContent = data[i].FirstName + " " + data[i].LastName + " " + data[i].FighterId;
         link.href = data[i].ShortName;
 
         // Appending the link to the tabledata and then appending the tabledata to the tablerow
