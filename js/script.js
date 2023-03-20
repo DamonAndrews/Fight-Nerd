@@ -154,36 +154,41 @@ form.addEventListener("submit", function (e) {
 
 
 
-function getApi() {
+
+function getAllFighters() {
   // fetch request gets a list of all the repos for the node.js organization
   var requestUrl = 'https://api.sportsdata.io/v3/mma/scores/json/Fighters?key=0244b7bf67b24f55bfd4ae6352ebda4e';
 
+
   fetch(requestUrl)
     .then(function (response) {
-      return response.json();
+      return response.json(); 
     })
     .then(function (data) {
-      console.log(data)
-      //Loop over the data to generate a table, each table row will have a link to the repo url
+      
+
+     
       for (var i = 0; i < data.length; i++) {
-        // Creating elements, tablerow, tabledata, and anchor
+        
         var createTableRow = document.createElement('tr');
         var tableData = document.createElement('td');
-        var link = document.createElement('a');
+        var nameDiv = document.createElement('div');
+        var fighterNameButton = document.createElement('a');
+        
+        fighterNameButton.textContent = data[i].FirstName + " " + data[i].LastName;
 
-        // Setting the text of link and the href of the link
-        link.textContent = data[i].FirstName + " " + data[i].LastName + " " + data[i].FighterId;
-        link.href = data[i].ShortName;
+        fighterNameButton.href = "https://api.sportsdata.io/v3/mma/scores/json/Fighter/" + data[i].FighterId + "?key=0244b7bf67b24f55bfd4ae6352ebda4e";
 
-        // Appending the link to the tabledata and then appending the tabledata to the tablerow
-        // The tablerow then gets appended to the tablebody
-        tableData.appendChild(link);
+        fighterNameButton.setAttribute("class","btn btn-black")
+        nameDiv.appendChild(fighterNameButton);
+        tableData.appendChild(nameDiv);
         createTableRow.appendChild(tableData);
         tableBody.appendChild(createTableRow);
+        
       }
-    });
-}
+    })
+  }
 
-fetchButton.addEventListener('click', getApi);
 
+fetchButton.addEventListener('click', getAllFighters);
 
