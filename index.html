@@ -70,8 +70,12 @@
             
             <section class="flex justify-center">
                 <div id="statSearchPageBlank" class="hide">
-                  <h3>SEARCH BY STATS</h3>
-                      <ol style="text-decoration: underline;">Trending Stat Searches</ol>
+                  <div id="openingPage">
+                  <div class="mt-10 mb-5 text-5xl">
+                    <h2>Select Stats</h2>
+                  </div></div>
+                      <ol style="text-decoration: underline;
+                      "> <input type="text" placeholder="Search.."></ol>
                       <li>Wins</li>
                       <li>Losses</li>
                       <li>Knockouts</li>
@@ -85,10 +89,12 @@
                     <div class="mt-10 mb-5 text-5xl">
                       <h2>Select A Fighter</h2>
                     </div>
-
+                    
 
                     <div class="text-center pt-4">
-                      <button class="btn btn-danger" id="fetch-button">
+                      <div><input type="text" placeholder="Search.."></div><br><br>
+                      
+                      <button class="btn btn-primary" id="fetch-button">
                         Search All
                       </button>
                       <div class="">
@@ -131,7 +137,7 @@
                                             </div>
                         </form>
                         <div class="flex justify-center mt-8">
-                          <button id="fighterSearchButton" class="btn bg-green-300 hover:bg-white-300">Search Filtered</button>
+                          <button id="fighterSearchButton" class="btn bg-yellow-300 hover:bg-white-300">Search Filtered</button>
                         </div>
 
                     
@@ -167,7 +173,7 @@
             <section class="flex justify-center">
                 <div id="aboutPage" class="hide">
                   <h3>ABOUT FIGHT NERD</h3>
-                      <ol style="text-decoration: underline;">Fight Nerd provides access to statistical MMA data otherwise unavailable or difficult to obtain, in a user friendly format.</ol>
+                      <ol style="text-decoration: underline;">Complete Historical UFC Data</ol>
                       <li>Partnerships</li>
                       <li>Corporate Use</li>
                 </div>
