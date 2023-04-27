@@ -972,6 +972,14 @@ a:hover, .buttons :hover {
   .btn.btn-squared {
     border-radius: 0;
   }
+
+ 
+#column{
+  display: flex;
+  flex-direction: column;
+}
+
+
   
   .btn.btn-sm {
     font-size: 0.85rem;
