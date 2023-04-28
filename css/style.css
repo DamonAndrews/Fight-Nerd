@@ -1888,7 +1888,7 @@ a:hover, .buttons :hover {
     transition: 0.3s;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
   }
   
   /* On mouse-over, add a deeper shadow */
