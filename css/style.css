@@ -1878,7 +1878,7 @@ a:hover, .buttons :hover {
 
 #flexBox{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 
 }
 
