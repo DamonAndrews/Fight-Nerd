@@ -54,7 +54,7 @@ h3 {
 }
 
   h4, button {
-    color:blue;
+    color:red;
     font-size:x-large;
     font-weight: bolder;
     margin: 0;
@@ -104,7 +104,7 @@ a:hover, .buttons :hover {
   background-color: black;
   text-decoration: none;
   font-weight: bold; 
-  color: white;
+  color: gray;
   font-size: x-large;
  
 }
@@ -1019,8 +1019,10 @@ a:hover, .buttons :hover {
   }
   
   .btn.btn-primary {
-    background-color: #217b06;
-    color: #d9e9e8;
+    background-color: white;
+    color: #0b0b0b;
+    font-weight: bolder;
+    border: 3px solid black;
   }
   
   .btn.btn-primary:hover {
@@ -2101,6 +2103,9 @@ input:checked + .slider:before {
  font-size: large;
  font-weight: bold;
 }
+
+
+
 
 /* MEDIA QUERIES */
 
