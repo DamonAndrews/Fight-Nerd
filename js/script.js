@@ -39,14 +39,12 @@ function hideContactAndLoginTabs(){
   tapeSearchPageBlank.classList.add("hide");
 }
 function hideAboutAndLoginTabs(){
-  aboutPage.classList.add("hide");
   loginPage.classList.add("hide");
   statSearchPageBlank.classList.add("hide");
   fightSearchPageBlank.classList.add("hide");
   tapeSearchPageBlank.classList.add("hide");
 }
 function hideAboutAndContactTabs(){
-  aboutPage.classList.add("hide");
   contactPage.classList.add("hide");
   statSearchPageBlank.classList.add("hide");
   fightSearchPageBlank.classList.add("hide");
@@ -71,17 +69,6 @@ searchByStat.addEventListener("click", launchStatSearchPage);
 searchByFighter.addEventListener("click", launchFighterSearchPage);
 
 totT.addEventListener("click", taleOfTheTape);
-
-
-var aboutPage = document.getElementById("aboutPage");
-
-aboutButton.addEventListener("click", aboutFunction);
-
-function aboutFunction(){
-  hidePages();
-  hideContactAndLoginTabs();
-  aboutPage.classList.remove("hide");
-}
 
 var contactPage = document.getElementById("contactPage");
 

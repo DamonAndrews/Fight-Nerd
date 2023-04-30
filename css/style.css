@@ -40,13 +40,17 @@ h1 {
   margin:0.67em 0; 
 }
 
+
+
 h2{
   text-align: center; 
 }
 
-  h4{
+  h4, button {
     color:blue;
-    font-size: larger;
+    font-size:x-large;
+    font-weight: bolder;
+    margin: 0;
 }
 #fighterSearchPageBlank{
     text-align: center;
@@ -124,10 +128,11 @@ a:hover, .buttons :hover {
   /**
    * Add the correct font weight in Chrome, Edge, and Safari.
    */
-  b,
+  /* b,
   strong {
+    font-size:x-large;
     font-weight: bolder;
-  }
+  } */
   
   /**
    * 1. Correct the inheritance and scaling of font size in all browsers.
@@ -404,8 +409,7 @@ a:hover, .buttons :hover {
   
   input,
   select,
-  textarea,
-  button {
+  textarea {
     margin: 0;
   }
   
@@ -1129,6 +1133,8 @@ a:hover, .buttons :hover {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    font-weight: bolder;
+    font-size:x-large;
   }
   
   .container.container-fluid {
@@ -1902,6 +1908,9 @@ a:hover, .buttons :hover {
     text-align: center;
   }
 
+
+
+/* FOOTER STYLING */
 footer{
   position: sticky;
   bottom: 0;
@@ -1922,7 +1931,6 @@ footer{
   text-align: center;
   background-color: #111;
 }
-
 .footer-content h3{
   font-size: 2.1rem;
   font-weight: 500;
@@ -1930,7 +1938,6 @@ footer{
   line-height: 3rem;
   color: grey
 }
-
 .footer-content p{
   max-width: 500px;
   margin: 10px auto;
@@ -1938,8 +1945,6 @@ footer{
   font-size: 14px;
   color: #cacdd2;
 }
-
-
 .footer-bottom{
   background: #000;
   width: 100vw;
@@ -1947,7 +1952,6 @@ footer{
   padding-bottom: 40px;
   text-align: center;
 }
-
 .footer-bottom p{
   /* float: left; */
   font-size: 14px;
@@ -1964,29 +1968,23 @@ footer{
    opacity: .4;
    font-weight: 200;
 }
-
 .footer-menu{
   float: right;
 }
-
 .footer-menu ul{
   display: flex;
 }
-
 .footer-menu ul li{
 padding-right: 10px;
 display: block;
 }
-
 .footer-menu ul li a{
   color: #cfd2d6;
   text-decoration: none;
 }
-
 .footer-menu ul li a:hover{
   color: #27bcda;
 }
-
 .fa {
   /* padding: 20px; */
   font-size: 30px;
@@ -1995,11 +1993,9 @@ display: block;
   text-decoration: none;
   border-radius: 50%;
 }
-
 .fa:hover {
     opacity: 0.7;
 }
-
 .fa-twitter {
   background: #55ACEE;
   color: white;
@@ -2018,4 +2014,57 @@ display: block;
 .fa-linkedin {
   background: #007bb5;
   color: white;
+}
+
+/* MEDIA QUERIES */
+
+
+
+@media only screen and (max-width: 991px) {
+  .card h4 {
+    font-size: 0.8rem; /* adjust the font size as needed */
+    line-height: 1.2; /* adjust the line height as needed */
+    font-weight: bolder;
+  }
+  .card p {
+    font-size: 0.6rem; /* adjust the font size as needed */
+    line-height: 1.2; /* adjust the line height as needed */
+    font-weight: bolder;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .card h4 {
+    font-size: 1.5rem; /* adjust the font size as needed */
+    line-height: 1.2; /* adjust the line height as needed */
+  }
+  .card p {
+    font-size: 0.9rem; /* adjust the font size as needed */
+    line-height: 1.2; /* adjust the line height as needed */
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .card h4 {
+    font-size: 0.8rem; /* adjust the font size as needed */
+    line-height: 1.2; /* adjust the line height as needed */
+    font-weight: bolder;
+  }
+  .card p {
+    font-size: 0.6rem; /* adjust the font size as needed */
+    line-height: 1.2; /* adjust the line height as needed */
+    font-weight: bolder;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .card h4 {
+    font-size: 0.6rem; /* adjust the font size as needed */
+    line-height: 1.2; /* adjust the line height as needed */
+    font-weight: bolder;
+  }
+  .card p {
+    font-size: 0.4rem; /* adjust the font size as needed */
+    line-height: 1.2; /* adjust the line height as needed */
+    font-weight: bolder;
+  }
 }
