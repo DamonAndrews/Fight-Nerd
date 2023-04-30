@@ -64,64 +64,104 @@
 </div>
         
 <!-- STAT SEARCH PAGE -->
-<section class="flex justify-center">
-        <div id="statSearchPageBlank" class="hide">
-                                                        <div class="mt-10 mb-5 text-5xl">
-                                                          <h2>Search by Stats</h2>
-                                                              </div><br><br>
-            <div class="text-center pt-4">
-                                                  <input type="text" placeholder="Search.."><br><br>
+<section>
 
-<form class="flex text-black">
-                                                          <div class="p-5">
-                                                    <label id="teamSelector"></label>
-            
-                                                  <select id="allTeams">
-                                                    <option>---Select Gender---</option>
-                                                    <option value="Men's">Male</option>
-                                                    <option value="Women's">Female</option>
-                                                  </select>
-                                                              </div>
-            
-                                                      <div class="p-5">
-                                                <label id="teamSelector"></label>
-                                                  <select id="allTeams">
-                                                    <option>---Select Division---</option>
-                                                    <option value="Atlanta Hawks">Flyweight</option>
-                                                    <option value="Boston Celtics">Bantamweight</option>
-                                                    <option value="Boston Celtics">Featherweight</option>
-                                                    <option value="Boston Celtics">Lightweight</option>
-                                                    <option value="Boston Celtics">Welterweight</option>
-                                                    <option value="Boston Celtics">Middleweight</option>
-                                                    <option value="Boston Celtics">Light Heavyweight</option>
-                                                    <option value="Boston Celtics">Heavyweight</option>
-                                                  </select>
-                                                          </div>
-            
-                                                                <div class="p-5">
-                                                      <label id="teamSelector"></label>
-                                                        <select id="allTeams">
-                                                          <option>---Select Fighter---</option>
-                                                          <option value="">Bruno</option>
-                                                          <option value="">Amir</option>
-                                                          <option value="">Alexandre</option>
-                                                          <option value="">Askar</option>
-                                                          <option value="">Brandon</option>
-                                                        </select>
-                                                                    </div>
+<div id="statSearchPageBlank" class="hide mt-10 mb-5 text-5xl">
+
+                          <h2 style="font-size:50px;"><b>SEARCH BY <span style="color: red; font-style: italic">Stats</span></b></h2>
+                 <div class="oppositeColumns">
+
+            <div id="rightColumn">
+              <h3>Trending Stats</h3>
+            <a href="#">Wins</a>
+            <a href="#">Losses</a>
+            <a href="#">Knockouts</a>
+            <a href="#">Submissions</a>
+            <a href="#">Strikes</a>
+            <a href="#">Takedowns</a>
+            <a href="#">Knockdowns</a>
+            <a href="#">Octagon Time</a>
+            <a href="#">Control Time</a>
+          </div>
+          
+          <div id="leftColumn">
+            <h3>Filters</h3>
+
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+              <span class="toggle-label">Active</span>
+              <span class="toggle-label">All Time</span>
+            </label>
+            <div id="genderButtons">
+                      <label>
+                        <input type="radio" name="gender" value="male">
+                        Male
+                      </label>
+                      
+                      <label>
+                        <input type="radio" name="gender" value="female">
+                        Female
+                      </label>
+                      
+                      <label>
+                        <input type="radio" name="gender" value="both">
+                        GOAT (All)
+                      </label>
+
+
+                     
+          </div>
+
+         
+          
+          <form class="flex text-black">
+                                                  
+            <div class="p-1" id="form">
+     
+              <div>
+                <h3>Men's Divisions</h3>
+                <label><input type="checkbox" name="division" value="flyweight"> Flyweight</label>
+                <label><input type="checkbox" name="division" value="bantamweight"> Bantamweight</label>
+                <label><input type="checkbox" name="division" value="featherweight"> Featherweight</label><br>
+                <label><input type="checkbox" name="division" value="lightweight"> Lightweight</label>
+                <label><input type="checkbox" name="division" value="welterweight"> Welterweight</label>
+                <label><input type="checkbox" name="division" value="middleweight"> Middleweight</label><br>
+                <label><input type="checkbox" name="division" value="light-heavyweight"> Light Heavyweight</label>
+                <label><input type="checkbox" name="division" value="heavyweight"> Heavyweight</label><br>
+              </div>
+              
+              <div>
+                <h3>Women's Divisions</h3>
+                <label>
+                  <input type="checkbox" name="division" value="strawweight">
+                  Strawweight
+                </label>
+                <label>
+                  <input type="checkbox" name="division" value="flyweight">
+                  Flyweight
+                </label>
+                <label>
+                  <input type="checkbox" name="division" value="bantamweight">
+                  Bantamweight
+                </label>
+                <label>
+                  <input type="checkbox" name="division" value="featherweight">
+                  Featherweight
+                </label>
+              </div>
+              
+                </div>                                                     
 </form>
+                                                              
+        </div>                                                         
+     </div>       
 
-                      <div id="column">
-                      <a href="#">Wins</a>
-                      <a href="#">Losses</a>
-                      <a href="#">Knockouts</a>
-                      <a href="#">Submissions</a>
-                      <a href="#">Strikes</a>
-                      <a href="#">Takedowns</a>
-                      <a href="#">Knockdowns</a>
-                      <a href="#">Octagon Time</a>
-                      <a href="#">Control Time</a>
-                    </div>
+            
+              
+
+
+                      
                      
                 </div>
           </div>

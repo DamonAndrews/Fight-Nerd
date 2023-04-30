@@ -44,6 +44,13 @@ h1 {
 
 h2{
   text-align: center; 
+  font-size:50px;
+  font-weight: bold;
+}
+
+h3 {
+  text-decoration: underline;
+
 }
 
   h4, button {
@@ -212,6 +219,7 @@ a:hover, .buttons :hover {
   input {
     /* 1 */
     overflow: visible;
+    font-size: x-large;
   }
   
   /**
@@ -977,14 +985,23 @@ a:hover, .buttons :hover {
     border-radius: 0;
   }
 
- 
-#column{
+.oppositeColumns {
+  display: flex;
+  justify-content: space-between;
+}
+#rightColumn{
   display: flex;
   flex-direction: column;
+  text-align: left;
+  justify-content: space-between;
 }
 
+#leftColumn{
+  flex-direction: column;
+  text-align: right;
+}
 
-  
+ 
   .btn.btn-sm {
     font-size: 0.85rem;
     padding: 0.3rem 0.9rem;
@@ -2014,6 +2031,75 @@ display: block;
 .fa-linkedin {
   background: #007bb5;
   color: white;
+}
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 125px;
+  height: 34px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 52px;
+  left: 4px;
+  bottom: 4px;
+  background-color: rgb(16, 16, 16);
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #747474;
+}
+
+input:checked + .slider:before {
+  transform: translateX(65px);
+}
+
+.toggle-label {
+  position: absolute;
+  display: block;
+  width: calc(50% - 8px);
+  text-align: center;
+  font-size: 0.8rem;
+  color: #b01010;
+  font-weight: bold;
+  top: 9px;
+  z-index: 1;
+}
+
+.toggle-label:last-child {
+  right: 0;
+}
+
+#form {
+  max-width: 500px; /* change the value as needed */
+}
+
+#genderButtons {
+ font-size: large;
+ font-weight: bold;
 }
 
 /* MEDIA QUERIES */
