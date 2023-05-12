@@ -175,76 +175,134 @@
 </section> 
 
 <!-- FIGHTER SEARCH PAGE -->
-<section class="flex justify-center">
-  <div id="fightSearchPageBlank" class="hide">
+<section>
+  <div id="fightSearchPageBlank" class="hide mt-10 mb-5 text-5xl">
     <div>
-                                                  <div class="mt-10 mb-5 text-5xl">
-                                                    <h2 style="font-size:50px;"><b>SEARCH BY <span style="color: red; font-style: italic">Fighter</span></b></h2><br>
-                                                  </div>
+      <div class="mt-10 mb-5 text-5xl">
+        <h2 style="font-size:50px;"><b>SEARCH BY <span style="color: red; font-style: italic">Fighter</span></b></h2>
+      <!-- </div> -->
 
 
-                                                <div class="text-center pt-4">
-                                                  <input type="text" placeholder="Search.."><br><br>
-                                                  <button class="btn btn-primary text-black" id="fetch-button">
-                                                    Search All
-                                                  </button>
-                                                  <div class="">
+    <div class="text-center pt-4">
+      <button class="btn btn-primary text-black" id="fetch-button">
+        Show All
+      </button>
+      <div class=""><br>
+       
+        
+    </div>
+    <div class="oppositeColumns">
+    
+                <div id="rightColumn">
+                  <h3>Trending Fighters</h3>
+                  <a href="#">...</a>
+                  <a href="#">...</a>
+                  <a href="#">...</a>
+                  <a href="#">...</a>
+                  <a href="#">...</a>
+                  <a href="#">...</a>
+                  <a href="#">...</a>
+                  <a href="#">...</a>
+                  <a href="#">...</a>
+              </div>
+    
+    
+              
             
-      <form class="flex text-black">
-                                                    <div class="p-5">
-                                           <label id="teamSelector"></label>
-                    
-                                            <select id="allTeams">
-                                              <option>---Select Gender---</option>
-                                              <option value="Men's">Male</option>
-                                              <option value="Women's">Female</option>
-                                            </select>
-                                                        </div>
-                    
-                                                      <div class="p-5">
-                                           <label id="teamSelector"></label>
-                                            <select id="allTeams">
-                                              <option>---Select Division---</option>
-                                              <option value="Atlanta Hawks">Flyweight</option>
-                                              <option value="Boston Celtics">Bantamweight</option>
-                                              <option value="Boston Celtics">Featherweight</option>
-                                              <option value="Boston Celtics">Lightweight</option>
-                                              <option value="Boston Celtics">Welterweight</option>
-                                              <option value="Boston Celtics">Middleweight</option>
-                                              <option value="Boston Celtics">Light Heavyweight</option>
-                                              <option value="Boston Celtics">Heavyweight</option>
-                                            </select>
-                                                            </div>
+              
 
-                                                      <div class="p-5">
-                                           <label id="teamSelector"></label>
-                                            <select id="allTeams">
-                                              <option>---Select Fighter---</option>
-                                              <option value="">Bruno</option>
-                                              <option value="">Amir</option>
-                                              <option value="">Alexandre</option>
-                                              <option value="">Askar</option>
-                                              <option value="">Brandon</option>
-                                            </select>
-                                                        </div>
-</form>
-                                      <div class="flex justify-center mt-8">
-                                        <button id="fighterSearchButton" class="btn bg-yellow-300 hover:bg-white-300">Search Filtered</button>
-                                      </div>
-
-</div>
-                    
-                    
-                                  <table class="card-body table mx-auto my-4">
-                                            <th>
-                                            <p class="my-4">Results:</p>
-                                            </th>
-                                            <tbody id="repo-table" class="mx-auto text-center"></tbody>
-                                  </table>
-</div>    
-               
+         
+                <div class="">
+                
+              
+              <div id="leftColumn">
+                <h3>Filters</h3>
+    
+                <label class="switch">
+                  <input type="checkbox">
+                  <span class="slider round"></span>
+                  <span class="toggle-label">Active</span>
+                  <span class="toggle-label">All Time</span>
+                </label>
+                <div id="genderButtons">
+                          <label>
+                            <input type="radio" name="gender" value="male">
+                            Male
+                          </label>
+                          
+                          <label>
+                            <input type="radio" name="gender" value="female">
+                            Female
+                          </label>
+                          
+                          <label>
+                            <input type="radio" name="gender" value="both">
+                            GOAT (All)
+                          </label>
+    
+    
+                         
+              </div>
+    
+             
+              
+              <form class="flex text-black">
+                                                      
+                <div class="p-1" id="form">
+         
+                  <div>
+                    <h3>Men's Divisions</h3>
+                    <label><input type="checkbox" name="division" value="flyweight"> Flyweight</label>
+                    <label><input type="checkbox" name="division" value="bantamweight"> Bantamweight</label>
+                    <label><input type="checkbox" name="division" value="featherweight"> Featherweight</label><br>
+                    <label><input type="checkbox" name="division" value="lightweight"> Lightweight</label>
+                    <label><input type="checkbox" name="division" value="welterweight"> Welterweight</label>
+                    <label><input type="checkbox" name="division" value="middleweight"> Middleweight</label><br>
+                    <label><input type="checkbox" name="division" value="light-heavyweight"> Light Heavyweight</label>
+                    <label><input type="checkbox" name="division" value="heavyweight"> Heavyweight</label><br>
+                  </div>
+                  
+                  <div>
+                    <h3>Women's Divisions</h3>
+                    <label>
+                      <input type="checkbox" name="division" value="strawweight">
+                      Strawweight
+                    </label>
+                    <label>
+                      <input type="checkbox" name="division" value="flyweight">
+                      Flyweight
+                    </label>
+                    <label>
+                      <input type="checkbox" name="division" value="bantamweight">
+                      Bantamweight
+                    </label>
+                    <label>
+                      <input type="checkbox" name="division" value="featherweight">
+                      Featherweight
+                    </label>
+                  </div>
+                  
+                    </div>                                                     
+    </form>
+                                                                  
+            </div>                                                         
+         </div>       
+    
+                
           
-</section>  
+    
+    
+                          
+                         
+                    </div>
+                    <table class="card-body table mx-auto my-4">
+                      <th>
+                      <p class="my-4">Results:</p>
+                      </th>
+                      <tbody id="repo-table" class="mx-auto text-center"></tbody>
+            </table>  
+              </div>
+    </section> 
 
 <!-- TALE OF THE TAPE PAGE -->
 <section class="justify-center text-center">
