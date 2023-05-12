@@ -1001,7 +1001,13 @@ a:hover, .buttons :hover {
   text-align: right;
 }
 
- 
+.max-w-lg img {
+  max-width: 100%;
+  width: 100%;
+  height: 200px; /* or any other value you prefer */
+  padding-left: 5%;
+  padding-right: 5%;
+}
   .btn.btn-sm {
     font-size: 0.85rem;
     padding: 0.3rem 0.9rem;
