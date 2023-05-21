@@ -1,3 +1,4 @@
+
 *{
   margin: 0;
   padding: 0;
@@ -12,11 +13,9 @@ html {
   }
   
   body {
-    margin: 0; 
     min-height: 100%;
     /* Remove the margin in all browsers. */
     background: grey;
-    font-family: sans-serif;
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Roboto, Helvetica,
@@ -25,7 +24,7 @@ html {
     color: #1a1a1a;
   }
 
-  main {
+main {
     display: block;
     /* Render the `main` element consistently in IE. */
   }
@@ -40,8 +39,6 @@ h1 {
   margin:0.67em 0; 
 }
 
-
-
 h2{
   text-align: center; 
   font-size:50px;
@@ -54,7 +51,7 @@ h3 {
 }
 
   h4, button {
-    color:red;
+    color:white;
     font-size:x-large;
     font-weight: bolder;
     margin: 0;
@@ -78,25 +75,7 @@ p {
     overflow: visible;
     /* 2 */
   }
-  
-
-  /* MAIN CONTENT LINKS */
-a, button :hover, h4 button
-[role="button"] {
-cursor: grab;
-  color: white;
-  text-decoration: underline;
-  font-size: x-large;
-}
-/* BANNER LINKS */
-a:hover, .buttons :hover {
-  color: blue;
-  text-decoration: underline;
-  font-size: x-large;
-  cursor: grab; 
-}
-
-/* NAVIGATION/OPTION BAR UNDER LOGO */
+ /* NAVIGATION BUTTONS UNDER LOGO (AT REST) */
 .buttons {
   padding: 5px;
   display: flex;
@@ -104,16 +83,39 @@ a:hover, .buttons :hover {
   background-color: black;
   text-decoration: none;
   font-weight: bold; 
-  color: gray;
+  color: white;
   font-size: x-large;
- 
 }
 
-.buttons :active, a:active, buttons :active, h4 :active{
-  cursor: grabbing
+/* NAVIGATION BUTTONS UNDER LOGO WHEN HOVERED ON */
+.buttons > *:hover {
+  color: red;
+  text-decoration: underline;
+  cursor: grab; 
 }
 
+.buttons > *:active, .buttons > *:focus {
+  cursor: grabbing;
+}
 
+/* 3 CONTENT PAGE CARDS ON HOMEPAGE (AT REST) */
+a, h4 button, [role="button"] {
+  cursor: grab;
+  text-decoration: none;
+  font-weight: bold; 
+  color: white;
+  font-size: x-large;
+}
+
+a:hover, h4 button:hover, [role="button"]:hover {
+  color: red;
+  text-decoration: underline;
+  cursor: grab; 
+}
+
+a:active, h4 button:active, [role="button"]:active {
+  cursor: grabbing;
+}
 
 .hide {
   display: none;
@@ -1742,7 +1744,7 @@ display: block;
 
 .slider {
   position: absolute;
-  cursor: pointer;
+  cursor: grab;
   top: 0;
   left: 0;
   right: 0;
@@ -1792,17 +1794,12 @@ input:checked + .slider:before {
   max-width: 500px; /* change the value as needed */
 }
 
-#genderButtons {
+.genderButtons {
  font-size: large;
  font-weight: bold;
 }
 
-
-
-
 /* MEDIA QUERIES */
-
-
 
 @media only screen and (max-width: 991px) {
   .card h4 {
@@ -1827,6 +1824,7 @@ input:checked + .slider:before {
     line-height: 1.2; /* adjust the line height as needed */
   }
 }
+
 
 @media only screen and (max-width: 767px) {
   .card h4 {
@@ -2013,6 +2011,87 @@ input:checked + .slider:before {
   }
 }
 
+/* col-lg */
+@media screen and (min-width: 992px) {
+  .col-lg-auto {
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+  .col-lg-1 {
+    flex: 0 0 8.33333%;
+    max-width: 8.33333%;
+  }
+  .col-lg-2 {
+    flex: 0 0 16.66667%;
+    max-width: 16.66667%;
+  }
+  .col-lg-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .col-lg-4 {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+  }
+  .col-lg-5 {
+    flex: 0 0 41.66667%;
+    max-width: 41.66667%;
+  }
+  .col-lg-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .col-lg-7 {
+    flex: 0 0 58.33333%;
+    max-width: 58.33333%;
+  }
+  .col-lg-8 {
+    flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+  }
+  .col-lg-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+  .col-lg-10 {
+    flex: 0 0 83.33333%;
+    max-width: 83.33333%;
+  }
+  .col-lg-11 {
+    flex: 0 0 91.66667%;
+    max-width: 91.66667%;
+  }
+  .col-lg-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .justify-space-between-lg {
+    justify-content: space-between;
+  }
+  .justify-space-around-lg {
+    justify-content: space-around;
+  }
+  .justify-flex-start-lg {
+    justify-content: flex-start;
+  }
+  .justify-flex-end-lg {
+    justify-content: flex-end;
+  }
+  .justify-center-lg {
+    justify-content: center;
+  }
+  .align-stretch-lg {
+    align-items: stretch;
+  }
+  .align-end-lg {
+    align-items: flex-end;
+  }
+  .align-center-lg {
+    align-items: center;
+  }
+}
+
+
 
 /* col-xl */
 @media screen and (min-width: 1200px) {
@@ -2090,3 +2169,6 @@ input:checked + .slider:before {
   }
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -8,20 +8,22 @@
     <title>Fight Nerd</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./src/input.css" />
 </head>
 
 <!-- HEADER BAR -->  
 <header>
                     <h1>            
-                                    <img href="" src="./images/nobg.png" alt="fight nerd logo" height="110"/> 
+                      <a href="index.html">
+                        <img src="./images/nobg.png" alt="fight nerd logo" height="110"/> 
+                      </a>
                     </h1>
 
-                    <navbar class="buttons">
+                    <nav class="buttons">
                                     <a href="">Home</a>
                                   <a id="contactButton">Contact</a>
                                     <a id="loginButton">Login/New User</a>
-                    </navbar>
+                    </nav>
 </header>
 
 
@@ -100,7 +102,7 @@
               <span class="toggle-label">Active</span>
               <span class="toggle-label">All Time</span>
             </label>
-            <div id="genderButtons">
+            <div class="genderButtons">
                       <label>
                         <input type="radio" name="gender" value="male">
                         Male
@@ -224,7 +226,7 @@
                   <span class="toggle-label">Active</span>
                   <span class="toggle-label">All Time</span>
                 </label>
-                <div id="genderButtons">
+                <div class="genderButtons">
                           <label>
                             <input type="radio" name="gender" value="male">
                             Male
@@ -486,7 +488,7 @@
 
 </footer> 
 
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="./js/script.js"></script>       
 </body>
 </html>

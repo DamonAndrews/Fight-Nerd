@@ -1,102 +1,88 @@
-var homePage = document.querySelector("#homePage");
-var body = document.querySelector(".body");
-var buttons = document.querySelector(".buttons");
+var homePage = $("#homePage");
+var body = $("#body");
+var buttons = $("#buttons");
 var sticky = buttons.offsetTop;
 // SEARCH BUTTONS ON CARDS IN CENTER OF PAGE
-var searchByStat = document.getElementById("searchByStat");
-var searchByFighter = document.getElementById("searchByFighter");
-var totT = document.getElementById("taleOfTheTape");
+var searchByStat = $("#searchByStat");
+var searchByFighter = $("#searchByFighter");
+var totT = $("#taleOfTheTape");
 
-var statSearchPageBlank = document.getElementById("statSearchPageBlank");
+var statSearchPageBlank = $("#statSearchPageBlank");
+var fightSearchPageBlank = $("#fightSearchPageBlank");
+var tapeSearchPageBlank = $("#tapeSearchPageBlank");
 
-var fightSearchPageBlank = document.getElementById("fightSearchPageBlank");
+var tableBody = $('#repo-table');
+var fetchButton = $('#fetch-button');
 
-var tapeSearchPageBlank = document.getElementById("tapeSearchPageBlank");
+var contactPage = $("#contactPage");
+var contactButton = $("#contactButton");
 
-var tableBody = document.getElementById('repo-table');
-var fetchButton = document.getElementById('fetch-button');
+var loginPage = $("#loginPage");
+var loginButton = $("#loginButton");
+
+const form = $("#form");
+const result = $("#result");
 
 function myFunction() {
   if (window.pageYOffset >= sticky) {
-    buttons.classList.add("sticky")
+    buttons.addClass("sticky")
   } else {
-    buttons.classList.remove("sticky");
+    buttons.removeClass("sticky");
   }
 }
 // When the user scrolls the page, execute myFunction
 window.onscroll = function() {myFunction()};
 
 function hidePages(){
-  homePage.classList.add("hide");
-  body.classList.remove("body");
+homePage.addClass("hide");
+body.removeClass("body");
 }
 
 function hideContactAndLoginTabs(){
-  contactPage.classList.add("hide");
-  loginPage.classList.add("hide");
-  statSearchPageBlank.classList.add("hide");
-  fightSearchPageBlank.classList.add("hide");
-  tapeSearchPageBlank.classList.add("hide");
+contactPage.addClass("hide");
+loginPage.addClass("hide");
+statSearchPageBlank.addClass("hide");
+fightSearchPageBlank.addClass("hide");
+tapeSearchPageBlank.addClass("hide");
 }
 function hideAboutAndLoginTabs(){
-  loginPage.classList.add("hide");
-  statSearchPageBlank.classList.add("hide");
-  fightSearchPageBlank.classList.add("hide");
-  tapeSearchPageBlank.classList.add("hide");
+loginPage.addClass("hide");
+statSearchPageBlank.addClass("hide");
+fightSearchPageBlank.addClass("hide");
+tapeSearchPageBlank.addClass("hide");  
 }
 function hideAboutAndContactTabs(){
-  contactPage.classList.add("hide");
-  statSearchPageBlank.classList.add("hide");
-  fightSearchPageBlank.classList.add("hide");
-  tapeSearchPageBlank.classList.add("hide");
+contactPage.addClass("hide");
+statSearchPageBlank.addClass("hide");
+fightSearchPageBlank.addClass("hide");
+tapeSearchPageBlank.addClass("hide");
 }
-
 function launchStatSearchPage(){
-  hidePages();
-  statSearchPageBlank.classList.remove("hide");
+hidePages();
+statSearchPageBlank.removeClass("hide");
 }
 function launchFighterSearchPage() {
-  hidePages();
-    fightSearchPageBlank.classList.remove("hide");
+hidePages();
+fightSearchPageBlank.removeClass("hide");
 }
 function taleOfTheTape(){
-  hidePages();
-  tapeSearchPageBlank.classList.remove("hide");
+hidePages();
+tapeSearchPageBlank.removeClass("hide");
 }
-
-searchByStat.addEventListener("click", launchStatSearchPage);
-
-searchByFighter.addEventListener("click", launchFighterSearchPage);
-
-totT.addEventListener("click", taleOfTheTape);
-
-var contactPage = document.getElementById("contactPage");
-
-contactButton.addEventListener("click", contactFunction);
 
 function contactFunction(){
-  hidePages();
-  hideAboutAndLoginTabs();
-  contactPage.classList.remove("hide");
+hidePages();
+hideAboutAndLoginTabs();
+contactPage.removeClass("hide");
 }
-
-var loginPage = document.getElementById("loginPage");
-
-loginButton.addEventListener("click", loginFunction);
 
 function loginFunction(){
-  hidePages();
-  hideAboutAndContactTabs();
-  loginPage.classList.remove("hide");
+hidePages();
+hideAboutAndContactTabs();
+loginPage.removeClass("hide");
 }
 
-
-
-
-const form = document.getElementById("form");
-const result = document.getElementById("result");
-
-form.addEventListener("submit", function (e) {
+form.on("submit", function (e) {
   const formData = new FormData(form);
   e.preventDefault();
   var object = {};
@@ -140,12 +126,9 @@ form.addEventListener("submit", function (e) {
 });
 
 
-
-
 function getAllFighters() {
   // fetch request gets a list of all the repos for the node.js organization
   var requestUrl = 'https://api.sportsdata.io/v3/mma/scores/json/Fighters?key=0244b7bf67b24f55bfd4ae6352ebda4e';
-
 
   fetch(requestUrl)
     .then(function (response) {
@@ -154,7 +137,6 @@ function getAllFighters() {
     .then(function (data) {
       
 
-     
       for (var i = 0; i < data.length; i++) {
         
         var createTableRow = document.createElement('tr');
@@ -164,18 +146,27 @@ function getAllFighters() {
         
         fighterNameButton.textContent = data[i].FirstName + " " + data[i].LastName;
 
-        fighterNameButton.href = "https://api.sportsdata.io/v3/mma/scores/json/Fighter/" + data[i].FighterId + "?key=0244b7bf67b24f55bfd4ae6352ebda4e";
-
-        fighterNameButton.setAttribute("class","btn btn-black")
-        nameDiv.appendChild(fighterNameButton);
-        tableData.appendChild(nameDiv);
-        createTableRow.appendChild(tableData);
-        tableBody.appendChild(createTableRow);
+fighterNameButton.href = "https://api.sportsdata.io/v3/mma/scores/json/Fighter/" + data[i].FighterId + "?key=0244b7bf67b24f55bfd4ae6352ebda4e";
+fighterNameButton.setAttribute("class","btn btn-black")
+nameDiv.append(fighterNameButton);
+tableData.append(nameDiv);
+createTableRow.append(tableData);
+tableBody.append(createTableRow);
         
       }
     })
   }
 
 
-fetchButton.addEventListener('click', getAllFighters);
+fetchButton.on('click', getAllFighters);
+
+searchByStat.on("click", launchStatSearchPage);
+
+searchByFighter.on("click", launchFighterSearchPage);
+
+totT.on("click", taleOfTheTape);
+
+contactButton.on("click", contactFunction);
+
+loginButton.on("click", loginFunction);
 
