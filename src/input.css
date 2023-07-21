@@ -1105,15 +1105,26 @@ a:active, h4 button:active, [role="button"]:active {
     margin-bottom: 1rem;
     width: 33.33%;
     height: 300px; /* set a fixed height */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
   }
-
-
+  
   .card img {
     width: 100%;
     height: 80%;
     object-fit: cover; /* control how the images are displayed */
   }
 
+
+
+
+
+  
   form .form-group {
     display: block;
     width: 100%;
@@ -1157,15 +1168,20 @@ a:active, h4 button:active, [role="button"]:active {
   
   .container {
     width: 85%;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    font-weight: bolder;
-    font-size:x-large;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bolder;
+  font-size: x-large;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   }
   
   .container.container-fluid {
     width: 92%;
+    max-width: 100%;
   }
   
   /* FLEX CONTENT */
@@ -1602,14 +1618,6 @@ a:active, h4 button:active, [role="button"]:active {
 
 }
 
-.card {
-    /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-  }
   
   /* On mouse-over, add a deeper shadow */
   .card:hover {
@@ -1801,54 +1809,88 @@ input:checked + .slider:before {
 
 /* MEDIA QUERIES */
 
+/* Media Queries */
 @media only screen and (max-width: 991px) {
+  /* Adjust font size and line height for h4 and p tags on smaller screens */
   .card h4 {
-    font-size: 0.8rem; /* adjust the font size as needed */
-    line-height: 1.2; /* adjust the line height as needed */
+    font-size: 0.8rem;
+    line-height: 1.2;
     font-weight: bolder;
   }
   .card p {
-    font-size: 0.6rem; /* adjust the font size as needed */
-    line-height: 1.2; /* adjust the line height as needed */
+    font-size: 0.6rem;
+    line-height: 1.2;
     font-weight: bolder;
+  }
+
+  /* Adjust the image height for smaller viewports */
+  .card img {
+    height: 60%; /* or any other appropriate value */
   }
 }
 
 @media only screen and (min-width: 992px) {
+  /* Adjust font size and line height for h4 and p tags on medium-sized screens */
   .card h4 {
-    font-size: 1.5rem; /* adjust the font size as needed */
-    line-height: 1.2; /* adjust the line height as needed */
+    font-size: 1.5rem;
+    line-height: 1.2;
   }
   .card p {
-    font-size: 0.9rem; /* adjust the font size as needed */
-    line-height: 1.2; /* adjust the line height as needed */
+    font-size: 0.9rem;
+    line-height: 1.2;
   }
 }
-
 
 @media only screen and (max-width: 767px) {
+  /* Adjust font size and line height for h4 and p tags on smaller screens */
   .card h4 {
-    font-size: 0.8rem; /* adjust the font size as needed */
-    line-height: 1.2; /* adjust the line height as needed */
+    font-size: 0.8rem;
+    line-height: 1.2;
     font-weight: bolder;
   }
   .card p {
-    font-size: 0.6rem; /* adjust the font size as needed */
-    line-height: 1.2; /* adjust the line height as needed */
+    font-size: 0.6rem;
+    line-height: 1.2;
     font-weight: bolder;
+  }
+
+  /* Adjust the image height for smaller viewports */
+  .card img {
+    height: 50%; /* or any other appropriate value */
   }
 }
+
 @media only screen and (max-width: 480px) {
+  /* Adjust font size and line height for h4 and p tags on smaller screens */
   .card h4 {
-    font-size: 0.6rem; /* adjust the font size as needed */
-    line-height: 1.2; /* adjust the line height as needed */
+    font-size: 0.6rem;
+    line-height: 1.2;
     font-weight: bolder;
   }
   .card p {
-    font-size: 0.4rem; /* adjust the font size as needed */
-    line-height: 1.2; /* adjust the line height as needed */
+    font-size: 0.4rem;
+    line-height: 1.2;
     font-weight: bolder;
   }
+
+  /* Adjust the image height for smaller viewports */
+  .card img {
+    height: 40%; /* or any other appropriate value */
+  }
+}
+
+/* .container */
+.container {
+  width: 85%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bolder;
+  font-size: x-large;
+}
+
+.container.container-fluid {
+  width: 92%;
 }
 
 /* col-sm */
@@ -2091,8 +2133,6 @@ input:checked + .slider:before {
   }
 }
 
-
-
 /* col-xl */
 @media screen and (min-width: 1200px) {
   .col-xl-1 {
@@ -2169,6 +2209,21 @@ input:checked + .slider:before {
   }
 }
 
+/* Remove background and white text for buttons */
+#searchByStat,
+#searchByFighter,
+#taleOfTheTape {
+  background-color: transparent;
+  color: black; /* Change the text color to your desired color */
+  border: none; /* Optional: If you want to remove the button border */
+  cursor: grab; /* Optional: Add a pointer cursor on hover */
+}
+
+#searchByStat:active,
+#searchByFighter:active,
+#taleOfTheTape:active {
+  cursor: grabbing;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
