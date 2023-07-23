@@ -32,56 +32,44 @@ function myFunction() {
 }
 // When the user scrolls the page, execute myFunction
 window.onscroll = function() {myFunction()};
+function hideAllPagesExcept(targetPage) {
+  const pages = [
+    homePage,
+    contactPage,
+    loginPage,
+    statSearchPageBlank,
+    fightSearchPageBlank,
+    tapeSearchPageBlank,
+  ];
 
-function hidePages(){
-homePage.addClass("hide");
-body.removeClass("body");
+  pages.forEach((page) => {
+    if (page !== targetPage) {
+      page.addClass("hide");
+    } else {
+      page.removeClass("hide");
+    }
+  });
 }
 
-function hideContactAndLoginTabs(){
-contactPage.addClass("hide");
-loginPage.addClass("hide");
-statSearchPageBlank.addClass("hide");
-fightSearchPageBlank.addClass("hide");
-tapeSearchPageBlank.addClass("hide");
+function launchStatSearchPage() {
+  hideAllPagesExcept(statSearchPageBlank);
 }
-function hideAboutAndLoginTabs(){
-loginPage.addClass("hide");
-statSearchPageBlank.addClass("hide");
-fightSearchPageBlank.addClass("hide");
-tapeSearchPageBlank.addClass("hide");  
-}
-function hideAboutAndContactTabs(){
-contactPage.addClass("hide");
-statSearchPageBlank.addClass("hide");
-fightSearchPageBlank.addClass("hide");
-tapeSearchPageBlank.addClass("hide");
-}
-function launchStatSearchPage(){
-hidePages();
-statSearchPageBlank.removeClass("hide");
-}
+
 function launchFighterSearchPage() {
-hidePages();
-fightSearchPageBlank.removeClass("hide");
-}
-function taleOfTheTape(){
-hidePages();
-tapeSearchPageBlank.removeClass("hide");
+  hideAllPagesExcept(fightSearchPageBlank);
 }
 
-function contactFunction(){
-hidePages();
-hideAboutAndLoginTabs();
-contactPage.removeClass("hide");
+function taleOfTheTape() {
+  hideAllPagesExcept(tapeSearchPageBlank);
 }
 
-function loginFunction(){
-hidePages();
-hideAboutAndContactTabs();
-loginPage.removeClass("hide");
+function contactFunction() {
+  hideAllPagesExcept(contactPage);
 }
 
+function loginFunction() {
+  hideAllPagesExcept(loginPage);
+}
 form.on("submit", function (e) {
   const formData = new FormData(form);
   e.preventDefault();
@@ -89,6 +77,8 @@ form.on("submit", function (e) {
   formData.forEach((value, key) => {
     object[key] = value;
   });
+
+  
   var json = JSON.stringify(object);
   result.innerHTML = "Please wait...";
 
@@ -170,3 +160,16 @@ contactButton.on("click", contactFunction);
 
 loginButton.on("click", loginFunction);
 
+const searchAllButton = document.getElementById("searchAllButton");
+
+  searchAllButton.addEventListener("click", () => {
+    fetch("https://api.ufc.com/v1/stats")
+      .then((response) => response.json())
+      .then((data) => {
+        // Process the data here
+        console.log(data); // Example: Log the data to the console
+      })
+      .catch((error) => {
+        console.error("Error fetching UFC stats:", error);
+      });
+  });
