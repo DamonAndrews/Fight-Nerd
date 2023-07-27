@@ -1,36 +1,43 @@
-const mysql = require('mysql');
+const express = require('express');
+const mysql = require('mysql2');
 
+
+const app = express();
+const port = 3000; // Choose any port you prefer
 // MySQL database configuration
-const connection = mysql.createConnection({
-  host: 'localhost',      // Change this to your MySQL server's host if it's not running locally
-  user: 'root@localhost',  // Replace 'your_username' with your MySQL username
-  password: 'Arizona31!',  // Replace 'your_password' with your MySQL password
-  database: 'undisputedmma_db' // The name of your MySQL database
+const db = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'Arizona31!',
+  database: 'undisputedmma_db'
 });
 
-// Connect to the MySQL server
-connection.connect((err) => {
+// Connect to the database
+db.connect((err) => {
   if (err) {
-    console.error('Error connecting to MySQL:', err.message);
+    console.error('Error connecting to MySQL database:', err);
     return;
   }
-  console.log('Connected to MySQL database!');
+  console.log('Connected to the MySQL database!');
 });
 
-// Perform a sample query (you can replace this with your custom queries)
-connection.query('SELECT * FROM your_table', (err, results) => {
-  if (err) {
-    console.error('Error executing the query:', err.message);
-    return;
-  }
+// Define your API endpoint to get data from the MySQL database
+app.get('/api/fighters', (req, res) => {
+  // Replace this query with your own query to fetch data from the database
+  const sqlQuery = 'SELECT * FROM fighters';
 
-  // Process the query results (you can customize this part)
-  console.log('Query results:', results);
+  db.query(sqlQuery, (err, results) => {
+    if (err) {
+      console.error('Error executing MySQL query:', err);
+      res.status(500).json({ error: 'Internal Server Error' });
+      return;
+    }
+
+    res.json(results);
+  });
 });
 
-// Close the MySQL connection when the Node.js process is terminated
-process.on('SIGINT', () => {
-  connection.end();
-  console.log('MySQL connection closed.');
-  process.exit();
+// Start the server
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
 });

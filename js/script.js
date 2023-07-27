@@ -12,6 +12,7 @@ var fightSearchPageBlank = $("#fightSearchPageBlank");
 var tapeSearchPageBlank = $("#tapeSearchPageBlank");
 
 var fighterTableBody = $('#fighter-table');
+var statTableBody = $('#stat-table');
 var fetchButton = $('#fighterFetchButton');
 var statFetchButton = $('#statFetchButton');
 
@@ -147,7 +148,38 @@ fighterTableBody.append(createTableRow);
       }
     })
   }
+function getAllStats() {
+  // fetch request gets a list of all the repos for the node.js organization
+  var requestUrl = 'https://api.sportsdata.io/v3/mma/scores/json/Fighters?key=0244b7bf67b24f55bfd4ae6352ebda4e';
 
+  fetch(requestUrl)
+    .then(function (response) {
+      return response.json(); 
+    })
+    .then(function (data) {
+      
+
+      for (var i = 0; i < data.length; i++) {
+        
+        var createTableRow = document.createElement('tr');
+        var tableData = document.createElement('td');
+        var nameDiv = document.createElement('div');
+        var fighterNameButton = document.createElement('a');
+        
+        fighterNameButton.textContent = data[i].FirstName + " " + data[i].LastName;
+
+fighterNameButton.href = "https://api.sportsdata.io/v3/mma/scores/json/Fighter/" + data[i].FighterId + "?key=0244b7bf67b24f55bfd4ae6352ebda4e";
+fighterNameButton.setAttribute("class","btn btn-black")
+nameDiv.append(fighterNameButton);
+tableData.append(nameDiv);
+createTableRow.append(tableData);
+statTableBody.append(createTableRow);
+        
+      }
+    })
+  }
+
+statFetchButton.on('click', getAllStats);
 
 fetchButton.on('click', getAllFighters);
 
