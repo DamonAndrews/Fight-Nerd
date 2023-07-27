@@ -148,36 +148,42 @@ fighterTableBody.append(createTableRow);
       }
     })
   }
-function getAllStats() {
-  // fetch request gets a list of all the repos for the node.js organization
-  var requestUrl = 'https://api.sportsdata.io/v3/mma/scores/json/Fighters?key=0244b7bf67b24f55bfd4ae6352ebda4e';
+  
 
-  fetch(requestUrl)
-    .then(function (response) {
-      return response.json(); 
-    })
-    .then(function (data) {
-      
-
-      for (var i = 0; i < data.length; i++) {
-        
-        var createTableRow = document.createElement('tr');
-        var tableData = document.createElement('td');
-        var nameDiv = document.createElement('div');
-        var fighterNameButton = document.createElement('a');
-        
-        fighterNameButton.textContent = data[i].FirstName + " " + data[i].LastName;
-
-fighterNameButton.href = "https://api.sportsdata.io/v3/mma/scores/json/Fighter/" + data[i].FighterId + "?key=0244b7bf67b24f55bfd4ae6352ebda4e";
-fighterNameButton.setAttribute("class","btn btn-black")
-nameDiv.append(fighterNameButton);
-tableData.append(nameDiv);
-createTableRow.append(tableData);
-statTableBody.append(createTableRow);
-        
-      }
-    })
+  function getAllStats() {
+    // Replace 'http://localhost:3000' with the actual URL of your backend server
+    var requestUrl = 'localhost:3000/api/fighters';
+  
+    fetch(requestUrl, { mode: 'cors' })
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(function (data) {
+        for (var i = 0; i < data.length; i++) {
+          var createTableRow = document.createElement('tr');
+          var tableData = document.createElement('td');
+          var nameDiv = document.createElement('div');
+          var fighterNameButton = document.createElement('a');
+  
+          fighterNameButton.textContent = data[i].FirstName + ' ' + data[i].LastName;
+  
+          // Assuming your server provides the FighterId as part of the data
+          fighterNameButton.href = 'http://localhost:3000/api/fighters/' + data[i].FighterId;
+          fighterNameButton.setAttribute('class', 'btn btn-black');
+          nameDiv.append(fighterNameButton);
+          tableData.append(nameDiv);
+          createTableRow.append(tableData);
+          fighterTableBody.append(createTableRow);
+        }
+      })
+      .catch(function (error) {
+        console.error('Error fetching data:', error);
+      });
   }
+  
 
 statFetchButton.on('click', getAllStats);
 
@@ -193,16 +199,3 @@ contactButton.on("click", contactFunction);
 
 loginButton.on("click", loginFunction);
 
-
-
-  statFetchButton.addEventListener("click", () => {
-    fetch("https://api.ufc.com/v1/stats")
-      .then((response) => response.json())
-      .then((data) => {
-        // Process the data here
-        console.log(data); // Example: Log the data to the console
-      })
-      .catch((error) => {
-        console.error("Error fetching UFC stats:", error);
-      });
-  });
