@@ -1,28 +1,36 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
+const mysql = require('mysql');
 
-const app = express();
-const port = 3000; // Choose a port number for your server
-
-// Replace this with your database connection and query code
-const uMMA_DBStats = {
-  fighters: [
-    { name: 'Fighter 1', wins: 10, losses: 2, draws: 1 },
-    { name: 'Fighter 2', wins: 15, losses: 3, draws: 0 },
-    // Add more data as needed
-  ],
-};
-
-app.use(bodyParser.json());
-app.use(cors());
-
-app.get('/stats', (req, res) => {
-  // Replace this with your database query to fetch stats from your database
-  // For now, we'll just send fake data from the fakeDBStats object
-  res.json(uMMA_DBStats.fighters);
+// MySQL database configuration
+const connection = mysql.createConnection({
+  host: 'localhost',      // Change this to your MySQL server's host if it's not running locally
+  user: 'root@localhost',  // Replace 'your_username' with your MySQL username
+  password: 'Arizona31!',  // Replace 'your_password' with your MySQL password
+  database: 'undisputedmma_db' // The name of your MySQL database
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+// Connect to the MySQL server
+connection.connect((err) => {
+  if (err) {
+    console.error('Error connecting to MySQL:', err.message);
+    return;
+  }
+  console.log('Connected to MySQL database!');
+});
+
+// Perform a sample query (you can replace this with your custom queries)
+connection.query('SELECT * FROM your_table', (err, results) => {
+  if (err) {
+    console.error('Error executing the query:', err.message);
+    return;
+  }
+
+  // Process the query results (you can customize this part)
+  console.log('Query results:', results);
+});
+
+// Close the MySQL connection when the Node.js process is terminated
+process.on('SIGINT', () => {
+  connection.end();
+  console.log('MySQL connection closed.');
+  process.exit();
 });

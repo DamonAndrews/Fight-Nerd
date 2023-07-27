@@ -96,7 +96,7 @@
 
 
           
-            <button id="searchAllButton" class="btn btn-primary" style="width: 10%; margin-left: 180px; height: 50%;">
+            <button id="statFetchButton" class="btn btn-primary" style="width: 10%; margin-left: 180px; height: 50%;">
               Search All
             </button>
             
@@ -171,7 +171,14 @@
                 </div>                                                     
 </form>
                                                               
-        </div>                                                         
+        </div> 
+      </div>
+      <table class="card-body table mx-auto my-4">
+        <th>
+        <p class="my-4">Results:</p>
+        </th>
+        <tbody id="stat-table" class="mx-auto text-center"></tbody>
+</table>                                                          
      </div>       
 
             
@@ -180,7 +187,7 @@
 
                       
                      
-                </div>
+               
           </div>
 </section> 
 
@@ -194,7 +201,7 @@
 
 
     <div class="text-center pt-4">
-      <button class="btn btn-primary text-black" id="fetch-button">
+      <button class="btn btn-primary text-black" id="fighterFetchButton">
         Show All
       </button>
       <div class=""><br>
@@ -297,19 +304,12 @@
                                                                   
             </div>                                                         
          </div>       
-    
-                
-          
-    
-    
-                          
-                         
-                    </div>
+    </div>
                     <table class="card-body table mx-auto my-4">
                       <th>
                       <p class="my-4">Results:</p>
                       </th>
-                      <tbody id="repo-table" class="mx-auto text-center"></tbody>
+                      <tbody id="fighter-table" class="mx-auto text-center"></tbody>
             </table>  
               </div>
     </section> 

@@ -11,8 +11,9 @@ var statSearchPageBlank = $("#statSearchPageBlank");
 var fightSearchPageBlank = $("#fightSearchPageBlank");
 var tapeSearchPageBlank = $("#tapeSearchPageBlank");
 
-var tableBody = $('#repo-table');
-var fetchButton = $('#fetch-button');
+var fighterTableBody = $('#fighter-table');
+var fetchButton = $('#fighterFetchButton');
+var statFetchButton = $('#statFetchButton');
 
 var contactPage = $("#contactPage");
 var contactButton = $("#contactButton");
@@ -141,7 +142,7 @@ fighterNameButton.setAttribute("class","btn btn-black")
 nameDiv.append(fighterNameButton);
 tableData.append(nameDiv);
 createTableRow.append(tableData);
-tableBody.append(createTableRow);
+fighterTableBody.append(createTableRow);
         
       }
     })
@@ -160,9 +161,9 @@ contactButton.on("click", contactFunction);
 
 loginButton.on("click", loginFunction);
 
-const searchAllButton = document.getElementById("searchAllButton");
 
-  searchAllButton.addEventListener("click", () => {
+
+  statFetchButton.addEventListener("click", () => {
     fetch("https://api.ufc.com/v1/stats")
       .then((response) => response.json())
       .then((data) => {
