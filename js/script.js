@@ -152,7 +152,7 @@ fighterTableBody.append(createTableRow);
 
   function getAllStats() {
     // Replace 'http://localhost:3000' with the actual URL of your backend server
-    var requestUrl = 'localhost:3000/api/fighters';
+    var requestUrl = 'http://localhost:3000/api/fighters';
   
     fetch(requestUrl, { mode: 'cors' })
       .then(function (response) {
@@ -176,7 +176,7 @@ fighterTableBody.append(createTableRow);
           nameDiv.append(fighterNameButton);
           tableData.append(nameDiv);
           createTableRow.append(tableData);
-          fighterTableBody.append(createTableRow);
+          statTableBody.append(createTableRow);
         }
       })
       .catch(function (error) {
