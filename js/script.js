@@ -119,38 +119,54 @@ form.on("submit", function (e) {
 
 
 function getAllFighters() {
-     // Replace 'http://localhost:3000' with the actual URL of your backend server
-     var requestUrl = 'http://localhost:3000/api/fighters';
-  
-     fetch(requestUrl)
-       .then(function (response) {
-         if (!response.ok) {
-           throw new Error('Network response was not ok');
-         }
-         return response.json();
-       })
-       .then(function (data) {
-         for (var i = 0; i < data.length; i++) {
-           var createTableRow = document.createElement('tr');
-           var tableData = document.createElement('td');
-           var nameDiv = document.createElement('div');
-           var fighterNameButton = document.createElement('a');
-   
-           fighterNameButton.textContent = data[i].FirstName + ' ' + data[i].LastName;
-   
-           // Assuming your server provides the FighterId as part of the data
-           fighterNameButton.href = 'http://localhost:3000/api/fighters/' + data[i].FighterId;
-           fighterNameButton.setAttribute('class', 'btn btn-black');
-           nameDiv.append(fighterNameButton);
-           tableData.append(nameDiv);
-           createTableRow.append(tableData);
-           fighterTableBody.append(createTableRow);
-         }
-       })
-       .catch(function (error) {
-         console.error('Error fetching data:', error);
-       });
-   }
+  var requestUrl = 'http://localhost:3000/api/fighters';
+
+  fetch(requestUrl)
+    .then(function (response) {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(function (data) {
+      // Step 1: Sort the data array by wins in descending order
+      data.sort(function (a, b) {
+        return b.Wins - a.Wins;
+      });
+
+      for (var i = 0; i < data.length; i++) {
+        var createTableRow = document.createElement('tr');
+        var nameTableData = document.createElement('td'); // For the fighter's name and wins
+
+        var nameWinsDiv = document.createElement('div');
+        var fighterNameButton = document.createElement('a');
+        var winsSpan = document.createElement('span');
+
+        fighterNameButton.textContent = data[i].FirstName + ' ' + data[i].LastName + ' ' + data[i].Wins;
+
+        fighterNameButton.href = 'http://localhost:3000/api/fighters/' + data[i].FighterId;
+        fighterNameButton.setAttribute('class', 'btn btn-black');
+
+        // Step 2: Add the wins value to the card
+        
+        winsSpan.setAttribute('class', 'wins-span');
+
+        nameWinsDiv.append(fighterNameButton);
+        nameWinsDiv.append(winsSpan);
+
+        nameTableData.append(nameWinsDiv);
+
+        createTableRow.append(nameTableData);
+
+        fighterTableBody.append(createTableRow);
+      }
+    })
+    .catch(function (error) {
+      console.error('Error fetching data:', error);
+    });
+}
+
+
    
  
   
