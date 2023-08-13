@@ -18,7 +18,7 @@ const pool = mysql.createPool({
 // Endpoint to fetch fighters from the database
 app.get('/api/fighters', (req, res) => {
   // Use the database connection pool to execute the query
-  pool.query('SELECT * FROM fighters', (err, results) => {
+  pool.query('SELECT * FROM fighter', (err, results) => {
     if (err) {
       console.error('Error fetching data from the database:', err);
       res.status(500).json({ error: 'Internal server error' });
@@ -27,6 +27,7 @@ app.get('/api/fighters', (req, res) => {
     }
   });
 });
+
 
 // Start the server
 const PORT = 3000; // Replace with your desired port number

@@ -78,7 +78,16 @@
 
 <div id="statSearchPageBlank" class="hide mt-10 mb-5 text-5xl">
 
-                          <h2 style="font-size:50px;"><b>SEARCH BY <span style="color: red; font-style: italic">Stats</span></b></h2><br>
+  
+
+  <h2 style="font-size:50px;">
+    <b>SEARCH BY <span style="color: red; font-style: italic">Fighter</span></b>
+    <div>
+      <button class="btn btn-primary stat-button">
+        Search All
+      </button>
+    </div>
+  </h2><br>  
 <div class="oppositeColumns">
 
             <div id="rightColumn">
@@ -96,9 +105,6 @@
 
 
           
-            <button id="statFetchButton" class="btn btn-primary" style="width: 10%; margin-left: 180px; height: 50%;">
-              Search All
-            </button>
             
           
           <div id="leftColumn">
@@ -177,8 +183,8 @@
         <th>
         <p class="my-4">Results:</p>
         </th>
-        <tbody id="stat-table" class="mx-auto text-center"></tbody>
-</table>                                                          
+        <tbody id="fighter-table" class="mx-auto text-center"></tbody>
+</table>                                                      
      </div>       
 
             
@@ -196,14 +202,23 @@
   <div id="fightSearchPageBlank" class="hide mt-10 mb-5 text-5xl">
     <div>
       <div class="mt-10 mb-5 text-5xl">
-        <h2 style="font-size:50px;"><b>SEARCH BY <span style="color: red; font-style: italic">Fighter</span></b></h2>
+        <h2 style="font-size:50px;">
+          <b>SEARCH BY <span style="color: red; font-style: italic">Fighter</span></b>
+          <div>
+            <button class="btn btn-primary stat-button">
+              Search All
+            </button>
+          </div>
+        </h2><br>
       <!-- </div> -->
 
 
+
+      
+     
+
     <div class="text-center pt-4">
-      <button class="btn btn-primary text-black" id="fighterFetchButton">
-        Show All
-      </button>
+      
       <div class=""><br>
        
         
@@ -305,12 +320,15 @@
             </div>                                                         
          </div>       
     </div>
-                    <table class="card-body table mx-auto my-4">
-                      <th>
-                      <p class="my-4">Results:</p>
-                      </th>
-                      <tbody id="fighter-table" class="mx-auto text-center"></tbody>
-            </table>  
+
+
+    <table class="card-body table mx-auto my-4">
+      <th>
+      <p class="my-4">Results:</p>
+      </th>
+      <tbody id="stat-table" class="mx-auto text-center"></tbody>
+</table> 
+                  
               </div>
     </section> 
 
