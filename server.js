@@ -29,9 +29,9 @@ db.connect((err) => {
 });
 
 // Define your API endpoint to get data from the MySQL database
-app.get('/api/fighters', (req, res) => {
+app.get('/api/fighter', (req, res) => {
   // Replace this query with your own query to fetch data from the database
-  const sqlQuery = 'SELECT * FROM fighters';
+  const sqlQuery = 'SELECT * FROM fighter';
 
   db.query(sqlQuery, (err, results) => {
     if (err) {
